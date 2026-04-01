@@ -25,6 +25,7 @@ jobs:
       # Create new branch
       - name: Git
         run: |
+          git config --global --add safe.directory <repo-dir>
           git --version
           git config user.name 'GitHub Actions Bot"
           git config user.email '<>'
