@@ -55,9 +55,9 @@ jobs:
       # Create new PR based on branch
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
-#        with:
+        with:
 #          base: update-navigation-data
-#          branch: main
+          branch: example-patches
 
 
 
