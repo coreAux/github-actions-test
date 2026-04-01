@@ -1,0 +1,67 @@
+name: Update Navigation Data
+description: Updates Navigation Data and creates a Pull Request.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-and-pull-request:
+
+    runs-on: ubuntu-latest
+
+    # Install deps
+    steps:
+      - name: 📦 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🎚️ Enable Corepack
+        run: corepack enable
+
+      - name: 🏗️ Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: "package.json"
+          cache: "yarn"
+
+      # Create new branch
+      - name: Git
+        run: |
+          git --version
+          git config user.name 'GitHub Actions Bot"
+          git config user.email '<>'
+          git status
+          git checkout staging
+          git branch -b update-navigation-data
+          
+      # Run script
+      - name: Run script
+        uses: actions/github-script@v7
+        with:
+          script: node ./scripts/navigation-codegen.js
+      
+      # Add and commit
+      # Push changes (?)
+      - name: Git
+        run: |
+          git add .
+          git commit -m "chore: updated navigation data"
+          git push -u origin update-navigation-data
+
+
+      # Create new PR based on branch
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-requst@v8
+        with:
+          branch: update-navigation-data
+
+
+
+
+
+
+
+
+
+
+
+        
