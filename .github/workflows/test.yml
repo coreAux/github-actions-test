@@ -57,8 +57,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
-          base: main
-          branch: update-navigation-data
+          base: update-navigation-data
+          branch: main
 
 
 
