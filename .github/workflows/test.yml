@@ -30,7 +30,7 @@ jobs:
           git config --global user.email '<>'
           git status
           git checkout main
-          git branch -b update-navigation-data
+          git checkout -b update-navigation-data
           
       # Run script
       - name: Run script
