@@ -3,6 +3,9 @@
   "name": "mickey",
   "description": "descr",
   "license": "Apache-2.0",
+  "scripts": {
+    "nav:codegen": "node ./scripts/navigation-codegen.js"
+  },
   "repository": {
     "type": "git"
   },
