@@ -10,6 +10,6 @@
     "nav:codegen": "node ./scripts/navigation-codegen.js"
   },
   "devDependencies": {
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^10.1.0"
   }
 }
