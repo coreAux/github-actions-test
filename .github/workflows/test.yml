@@ -33,11 +33,13 @@ jobs:
           git checkout -b update-navigation-data
           
       # Run script
+#      - name: Run script
+#        uses: actions/github-script@v8
+#        with:
+#          script: |
+#            node ./scripts/navigation-codegen.js
       - name: Run script
-        uses: actions/github-script@v8
-        with:
-          script: |
-            node ./scripts/navigation-codegen.js
+        run: yarn run nav:codegen
       
       # Add and commit
       # Push changes (?)
