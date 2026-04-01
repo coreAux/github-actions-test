@@ -26,14 +26,14 @@ jobs:
         run: yarn install --immutable
 
       # Create new branch
-      - name: Git
-        run: |
-          git --version
-          git config --global user.name 'GitHub Actions Bot'
-          git config --global user.email '<>'
-          git status
-          git checkout main
-          git checkout -b update-navigation-data
+#      - name: Git
+#        run: |
+#          git --version
+#          git config --global user.name 'GitHub Actions Bot'
+#          git config --global user.email '<>'
+#          git status
+#          git checkout main
+#          git checkout -b update-navigation-data
           
       # Run script
 #      - name: Run script
@@ -46,19 +46,18 @@ jobs:
       
       # Add and commit
       # Push changes (?)
-      - name: Git
-        run: |
-          git add .
-          git commit -m "chore: updated navigation data"
-          git push -u origin update-navigation-data
-
+#      - name: Git
+#        run: |
+#          git add .
+#          git commit -m "chore: updated navigation data"
+#          git push -u origin update-navigation-data
 
       # Create new PR based on branch
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
-        with:
-          base: update-navigation-data
-          branch: main
+#        with:
+#          base: update-navigation-data
+#          branch: main
 
 
 
